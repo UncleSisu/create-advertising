@@ -1,4 +1,7 @@
-##Get Started
+Trellis and Bedrock are installed as [git subtrees](http://chrisknightindustries.com/2015/24/11/git-subtrees-for-trellis-workflow.html) so they can be updated later.
+
+
+## Get Started
 
 ### Install the following for local development
 - [Virtualbox](https://www.virtualbox.org/wiki/Downloads) >= 4.3.10
