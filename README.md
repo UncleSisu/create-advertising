@@ -1,6 +1,7 @@
 # WordPress / Trellis / Bedrock Starter
 
 ## Stack
+
 - [Trellis](https://roots.io/trellis/) - Uses Ansible to configure consistent dev/stage/production environments
 - [Bedrock](https://roots.io/bedrock/)
   - Using Composer to manage all dependencies, including WordPress
@@ -8,6 +9,7 @@
   - Separate WP core files from our site files
 
 ## Project Structure
+
 - **site** - Trellis Ansible files
   - **deploy-hooks**
     - `build-before.yml` - Custom commands to run before deploying
@@ -89,7 +91,9 @@ The username is the email you added to `wordpress_sites.yml` and the password is
 
 Custom theme development takes place inside the `site` directory.
 
-## Plugins
+More info to come.
+
+### Plugins
 
 Plugins are all managed using [Composer](http://getcomposer.org/).
 
@@ -97,7 +101,7 @@ Plugins are all managed using [Composer](http://getcomposer.org/).
 
 Check out [this blog post](https://roots.io/using-composer-with-wordpress/) for more info.
 
-### How to add a plugin
+#### How to add a plugin
 
 To add a plugin, add it under the `require` directive in `composer.json` or use `composer require <namespace>/<packagename>` from the command line. If it's from WordPress Packagist then the namespace is always `wpackagist-plugin`.
 
@@ -111,19 +115,21 @@ Whenever you add a new plugin or update the WP version, run `composer update` to
 
 Note: Some plugins may create files or folders outside of their given scope, or even make modifications to `wp-config.php` and other files in the `app` directory. These files should be added to your `.gitignore` file as they are managed by the plugins themselves, which are managed via Composer. Any modifications to `wp-config.php` that are needed should be moved into `config/application.php`.
 
+## Updating
+
 ### How to update a plugin
 
 Updating a plugin is just a matter of changing the version number in the `composer.json` file.
 
 Then running `composer update` will pull down the new version.
 
-## How to update Wordpress
+### How to update WordPress
 
 Updating your WordPress version is just a matter of changing the version number in the `composer.json` file.
 
 Then running `composer update` will pull down the new version.
 
-## How to update Trellis
+### How to update Trellis
 
 Trellis is installed as a [git subtree](http://chrisknightindustries.com/2015/24/11/git-subtrees-for-trellis-workflow.html). To update the subtree you need to checkout the corresponding branch and pull/ merge. To avoid merging the histories use the --squash command.
 
@@ -138,3 +144,22 @@ $ git commit -m "Update trellis from trellis/master"
 ```
 
 You will most likely get some merge conflicts with the files you have edited/customized which you will have to resolve.
+
+## Remote Server Setup
+
+### 1. Create a remote server
+
+You need a have a private server or virtual private server (AWS, Digital Ocean, etc..) running a bar/stock version of Ubuntu 16.04 Xenial.
+
+**You can't run trellis on a shared host** because you need to be able to connect to your server from your local computer via SSH.
+
+For Digital Ocean create a new droplet and choose Ubuntu 16.04 x64 for the distribution, $5/mo for the size, and choose any datacenter region.
+
+### 2. Provision the remote server
+
+Update the `trellis/hosts/<environment>` file, replacing `your_server_hostname` with the IP address of your remote server.
+
+Update the `trellis/group_vars/<environment>/wordpress_sites.yml` file
+
+
+
