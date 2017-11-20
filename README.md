@@ -55,8 +55,8 @@
 Open `trellis/group_vars/development/wordpress_sites.yml` in your editor.
 
 1. Replace `example.com` with your site url
-1. Replace `example.dev` with the development url you want
-1. Replace `admin@example.dev` with your email
+1. Change `canonical: example.dev` to the development url you want
+1. Change `admin_email: admin@example.dev` to your email
 
 Open `trellis/group_vars/development/vault.yml` in your editor.
 
@@ -155,11 +155,59 @@ You need a have a private server or virtual private server (AWS, Digital Ocean, 
 
 For Digital Ocean create a new droplet and choose Ubuntu 16.04 x64 for the distribution, $5/mo for the size, and choose any datacenter region.
 
-### 2. Provision the remote server
+### 2. Configure Trellis
+
+#### 2.1. Tell Trellis where the remote server is
 
 Update the `trellis/hosts/<environment>` file, replacing `your_server_hostname` with the IP address of your remote server.
 
-Update the `trellis/group_vars/<environment>/wordpress_sites.yml` file
+#### 2.2. Configure site
+
+Update the `trellis/group_vars/<environment>/wordpress_sites.yml` file.
+
+1. Replace `example.com` with your site url
+1. Change `canonical: staging.example.com` to the staging url (you should have DNS access to setup this domain for your private server)
+1. Change `repo: git@github.com:example/example.com.git` to the GitHub repo for your site's source code
+
+[See docs for additional options](https://roots.io/trellis/docs/wordpress-sites/#remote-servers)
+
+#### 2.3. Add GitHub Keys
+
+Open `trellis/group_vars/all/users.yml`.
+
+Uncomment the GitHub URLs, and edit them to reflect your GitHub username.
+
+#### 2.4. Add security settings
+
+Open the `trellis/group_vars/<environment>/vault.yml`.
+
+- Replace `example.com` with your site url
+- Update `name: "{{ admin_user }}" with the admin user name you want to use
+- Add unique values for `vault_mysql_root_password`, `password`, `salt`, and `db_password`
+- Generate your keys using [https://roots.io/salts.html](https://roots.io/salts.html) and replace all instances of "generateme"
+
+If setting up the production environment you will want to encrypt the `vault.yml` file using [Ansible Vault](https://roots.io/trellis/docs/vault/) so you are not committing plain text credentials to the repo.
+
+### 3. Provision the remote server
+
+Now that the proper configuration is in place, we need to let Trellis provision the production server by running Ansible which will run through a series of commands that will download, install, and configure the server.
+
+From inside the `trellis` directory run the following command where `<environment>` is either `development` or `production`.
+
+```
+ansible-playbook server.yml -e env=<environment>
+```
+
+This will take about 5–10 minutes, after which you will have a properly configured server we can deploy the site to.
+
+### 4. Deploy to remote server
+
+
+
+
+
+
+
 
 
 

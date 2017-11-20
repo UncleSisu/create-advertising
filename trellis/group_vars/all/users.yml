@@ -7,14 +7,14 @@ users:
     groups:
       - "{{ web_group }}"
     keys:
-      - "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
-      # - https://github.com/username.keys
+      - "{{ lookup('file', '~/.ssh/digitalocean.pub') }}"
+      - https://github.com/stevenwaller.keys
   - name: "{{ admin_user }}"
     groups:
       - sudo
     keys:
-      - "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
-      # - https://github.com/username.keys
+      - "{{ lookup('file', '~/.ssh/digitalocean.pub') }}"
+      - https://github.com/stevenwaller.keys
 
 web_user: web
 web_group: www-data
