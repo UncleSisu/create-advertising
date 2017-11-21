@@ -2,7 +2,7 @@
 # List each machine only once per [group], even if it will host multiple sites.
 
 [staging]
-165.227.12.63
+104.236.234.177
 
 [web]
-165.227.12.63
+104.236.234.177
