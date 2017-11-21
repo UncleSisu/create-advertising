@@ -12,7 +12,7 @@ vault_users:
 vault_wordpress_sites:
   example.com:
     env:
-      db_password: example_dbpassword
+      db_password: "GMNE2j#2LHM3gCid"
       # Generate your keys here: https://roots.io/salts.html
       auth_key: "&)ck0q<pnI=wlP[0gZ&2cvLh!*]hhy[Uy#pimf__O}^>/},=q<00!aK/M]r?4Y6u"
       secure_auth_key: "B>dSZp4q?5z]J?UbrX=AFM0bIeK;[Q(|y`RTGZ7b[]cHdot9g$H==%XMQQYnc,]<"

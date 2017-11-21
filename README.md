@@ -153,7 +153,13 @@ You need a have a private server or virtual private server (AWS, Digital Ocean, 
 
 **You can't run trellis on a shared host** because you need to be able to connect to your server from your local computer via SSH.
 
-For Digital Ocean create a new droplet and choose Ubuntu 16.04 x64 for the distribution, $5/mo for the size, and choose any datacenter region.
+For Digital Ocean create a new droplet and choose Ubuntu 16.04 x64 for the distribution, $5/mo for the size, choose any datacenter region, and include your SSH key.
+
+Confirm that you can SSH into the server
+
+```
+ssh root@<server-ip-address>
+```
 
 ### 2. Configure Trellis
 
