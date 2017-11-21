@@ -3,6 +3,17 @@
 ## Stack
 
 - [Trellis](https://roots.io/trellis/) - Uses Ansible to configure consistent dev/stage/production environments
+  - Nginx (with optional FastCGI micro-caching)
+  - PHP 7.0
+  - MariaDB as a drop-in MySQL replacement (but better)
+  - SSL support (A+ on https://www.ssllabs.com/ssltest/)
+  - HTTP/2 support (requires SSL)
+  - Composer
+  - WP-CLI
+  - sSMTP (mail delivery)
+  - Memcached
+  - Fail2ban
+  - ferm
 - [Bedrock](https://roots.io/bedrock/)
   - Using Composer to manage all dependencies, including WordPress
   - Easier environment-specific configuration
