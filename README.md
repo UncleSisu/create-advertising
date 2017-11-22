@@ -176,14 +176,18 @@ Add an admin user
 
 ```
 # adduser admin --ingroup sudo
+<Add password>
+<Leave user info blank>
+
 # gpasswd -a admin sudo
 # su - admin
 $ mkdir .ssh
 $ chmod 700 .ssh
 $ nano .ssh/authorized_keys
-paste id_rsa.pub inside
-control+0 to write file
-control+X to exit
+<paste id_rsa.pub inside>
+<control+0 to write file>
+<control+X to exit>
+
 $ chmod 600 .ssh/authorized_keys
 $ exit
 # service ssh restart
