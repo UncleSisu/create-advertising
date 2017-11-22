@@ -3,7 +3,7 @@ vault_mysql_root_password: "oZUvnb3*WXj2TG3M"
 
 # Documentation: https://roots.io/trellis/docs/security/
 vault_users:
-  - name: admin
+  - name: "{{ admin_user }}"
     password: guts02
     salt: ")6kHKufq4eXr7UzC"
 
