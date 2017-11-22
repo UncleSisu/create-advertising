@@ -164,7 +164,7 @@ You need a have a private server or virtual private server (AWS, Digital Ocean, 
 
 **You can't run trellis on a shared host** because you need to be able to connect to your server from your local computer via SSH.
 
-For Digital Ocean create a new droplet and choose Ubuntu 16.04 x64 for the distribution, $5/mo for the size, choose any datacenter region, and include your SSH key.
+For Digital Ocean create a new droplet and choose Ubuntu 16.04 x64 for the distribution, $5/mo for the size, choose any datacenter region, and **include your SSH key**.
 
 Confirm that you can SSH into the server
 
@@ -176,7 +176,7 @@ Add an admin user
 
 ```
 # adduser admin --ingroup sudo
-<Add password>
+<Add password (remember for Step 2.4)>
 <Leave user info blank>
 
 # gpasswd -a admin sudo
@@ -215,13 +215,19 @@ Open `trellis/group_vars/all/users.yml`.
 
 Uncomment the GitHub URLs, and edit them to reflect your GitHub username.
 
+Confirm you can SSH into GitHub
+
+```
+ssh -T git@github.com
+```
+
 #### 2.4. Add security settings
 
 Open the `trellis/group_vars/<environment>/vault.yml`.
 
 - Replace `example.com` with your site url
-- Update `name: "{{ admin_user }}" with the admin user name you want to use
-- Add unique values for `vault_mysql_root_password`, `password`, `salt`, and `db_password`
+- Add unique values for `vault_mysql_root_password` and `db_password`
+- Update `password: example_password` with the `admin` user password you set up on the remote server in Step 1
 - Generate your keys using [https://roots.io/salts.html](https://roots.io/salts.html) and replace all instances of "generateme"
 
 If setting up the production environment you will want to encrypt the `vault.yml` file using [Ansible Vault](https://roots.io/trellis/docs/vault/) so you are not committing plain text credentials to the repo.
@@ -233,7 +239,7 @@ Now that the proper configuration is in place, we need to let Trellis provision 
 From inside the `trellis` directory run the following command where `<environment>` is either `development` or `production`.
 
 ```
-ansible-playbook server.yml -e env=<environment> --ask-become-pass
+ansible-playbook server.yml -e env=<environment>
 ```
 
 This will take about 5–10 minutes, after which you will have a properly configured server we can deploy the site to.
