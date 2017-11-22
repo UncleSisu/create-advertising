@@ -5,7 +5,7 @@
 wordpress_sites:
   createadvertising.com:
     site_hosts:
-      - canonical: 104.236.234.177
+      - canonical: 138.197.209.233
         # redirects:
         #   - otherdomain.com
     local_path: ../site # path targeting local Bedrock site directory (relative to Ansible root)

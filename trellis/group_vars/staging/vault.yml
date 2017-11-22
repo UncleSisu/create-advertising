@@ -4,7 +4,7 @@ vault_mysql_root_password: "oZUvnb3*WXj2TG3M"
 # Documentation: https://roots.io/trellis/docs/security/
 vault_users:
   - name: admin
-    password: "74TN(sBzFtHtX2iH"
+    password: guts02
     salt: ")6kHKufq4eXr7UzC"
 
 # Variables to accompany `group_vars/staging/wordpress_sites.yml`
