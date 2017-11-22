@@ -172,6 +172,23 @@ Confirm that you can SSH into the server
 ssh root@<server-ip-address>
 ```
 
+Add an admin user
+
+```
+# adduser admin --ingroup sudo
+# gpasswd -a admin sudo
+# su - admin
+$ mkdir .ssh
+$ chmod 700 .ssh
+$ nano .ssh/authorized_keys
+paste id_rsa.pub inside
+control+0 to write file
+control+X to exit
+$ chmod 600 .ssh/authorized_keys
+$ exit
+# service ssh restart
+```
+
 ### 2. Configure Trellis
 
 #### 2.1. Tell Trellis where the remote server is
@@ -212,7 +229,7 @@ Now that the proper configuration is in place, we need to let Trellis provision 
 From inside the `trellis` directory run the following command where `<environment>` is either `development` or `production`.
 
 ```
-ansible-playbook server.yml -e env=<environment>
+ansible-playbook server.yml -e env=<environment> --ask-become-pass
 ```
 
 This will take about 5–10 minutes, after which you will have a properly configured server we can deploy the site to.
