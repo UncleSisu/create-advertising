@@ -150,7 +150,7 @@ From inside the root project directory run the following commands.
 $ git checkout trellis
 $ git pull
 $ git checkout master
-$ git merge -X subtree=trellis/ --squash trellis/master
+$ git merge -X subtree=trellis/ --squash trellis/master --allow-unrelated-histories
 $ git commit -m "Update trellis from trellis/master"
 ```
 
