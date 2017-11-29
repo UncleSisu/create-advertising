@@ -54,8 +54,8 @@
 
 - [Get Started](get_started.md) - Configure everything for local development
 - [Remote Server Setup](remote_server_setup.md) - Setup remote server for staging/production
-- [Development Workflow](development_workflow) - Create custom site/theme
-- [Deployment Workflow](deployment_workflow) - Deploy changes to staging/production
+- [Development Workflow](development_workflow.md) - Create custom site/theme
+- [Deployment Workflow](deployment_workflow.md) - Deploy changes to staging/production
 
 
 

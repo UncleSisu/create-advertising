@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "eee131786cda09ac1bcc8f96ad78be77",
+    "content-hash": "a098bdc256c77cd53c14cd276c024d0e",
     "packages": [
         {
             "name": "composer/installers",
@@ -121,7 +121,7 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2017-08-09 07:53:48"
+            "time": "2017-08-09T07:53:48+00:00"
         },
         {
             "name": "johnpbloch/wordpress",
@@ -160,7 +160,7 @@
                 "cms",
                 "wordpress"
             ],
-            "time": "2017-11-16 01:32:51"
+            "time": "2017-11-16T01:32:51+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core",
@@ -200,7 +200,7 @@
                 "cms",
                 "wordpress"
             ],
-            "time": "2017-11-16 01:32:46"
+            "time": "2017-11-16T01:32:46+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
@@ -249,7 +249,7 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2017-05-31 18:42:33"
+            "time": "2017-05-31T18:42:33+00:00"
         },
         {
             "name": "oscarotero/env",
@@ -291,7 +291,7 @@
             "keywords": [
                 "env"
             ],
-            "time": "2017-07-17 20:41:59"
+            "time": "2017-07-17T20:41:59+00:00"
         },
         {
             "name": "roots/wp-password-bcrypt",
@@ -348,7 +348,18 @@
             "keywords": [
                 "wordpress wp bcrypt password"
             ],
-            "time": "2016-03-01 16:27:06"
+            "time": "2016-03-01T16:27:06+00:00"
+        },
+        {
+            "name": "versionpress/versionpress",
+            "version": "4.0.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/versionpress/versionpress/releases/download/4.0-beta/versionpress-4.0-beta.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "type": "wordpress-plugin"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -398,7 +409,7 @@
                 "env",
                 "environment"
             ],
-            "time": "2016-09-01 10:05:43"
+            "time": "2016-09-01T10:05:43+00:00"
         }
     ],
     "packages-dev": [
@@ -451,7 +462,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2017-10-16 22:40:25"
+            "time": "2017-10-16T22:40:25+00:00"
         }
     ],
     "aliases": [],

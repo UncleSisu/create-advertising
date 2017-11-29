@@ -35,11 +35,13 @@ Check out [this blog post](https://roots.io/using-composer-with-wordpress/) for 
 
 ### How to add a plugin
 
-To add a plugin, add it under the `require` directive in `site/composer.json` or use `composer require <namespace>/<packagename>` from the command line. If it's from WordPress Packagist then the namespace is always `wpackagist-plugin`.
+To add a plugin, add it under the `require` directive in `site/composer.json` or use `composer require <namespace>/<packagename>` from the command line inside the `site` directory. If it's from WordPress Packagist then the namespace is always `wpackagist-plugin`.
 
 Example: `"wpackagist-plugin/akismet": "dev-trunk"`
 
-Whenever you add a new plugin or update the WP version, run `composer update` to install your new packages.
+Whenever you add a new plugin or update the WP version, run `composer update` from inside the `site` directory to install your new packages.
+
+Note: You will still have to login to the WP Admin and activate the plugin.
 
 `plugins`, and `mu-plugins` are Git ignored by default since Composer manages them. If you want to add something to those folders that isn't managed by Composer, you need to update `.gitignore` to whitelist them:
 
