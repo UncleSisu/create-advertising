@@ -1,6 +1,10 @@
 # WordPress / Trellis / Bedrock Starter
 
+This is a starter repo for building a bespoke WordPress site using modern dev tools.
+
 ## Stack
+
+### Server
 
 - [Trellis](https://roots.io/trellis/) - Uses Ansible to configure consistent dev/stage/production environments
   - Nginx (with optional FastCGI micro-caching)
@@ -14,10 +18,37 @@
   - Memcached
   - Fail2ban
   - ferm
-- [Bedrock](https://roots.io/bedrock/)
+
+## CMS
+
+- [Wordpress](https://wordpress.org/) - The web's most popular CMS
+- [Bedrock](https://roots.io/bedrock/) - Improved WordPress boilerplate
   - Using Composer to manage all dependencies, including WordPress
   - Easier environment-specific configuration
   - Separate WP core files from our site files
+- [VersionPress](https://versionpress.net/) - Use Git for WP version control.
+  - Undo changes
+  - Create staging sites
+  - Effecient Backups
+  - Merge databases
+- [Advanced Custom Fields](https://www.advancedcustomfields.com/)
+
+## Theme Development
+
+- [Gulp](http://gulpjs.com/) - Efficient, configurable, streaming task runner
+- [BrowserSync](https://www.browsersync.io/) - Live reload changes
+- [Webpack 2.6](https://webpack.github.io) - Automatic common module chunk bundling and tree shaking
+- [Babel](https://babeljs.io/) - Use the latest ECMAScript features
+- [Sass](http://sass-lang.com/) - Easier CSS dev with variables, nesting, partials, import, mixins, inheritance, and operators
+- [PostCSS](http://postcss.org/) - Autoprefix CSS
+- [ESLint](http://eslint.org/) - Catch syntax and style issues
+
+## Client
+
+- [jQuery](https://jquery.com/) - Get off my lawn!
+- [Lodash](https://lodash.com/) - Little utilities like throttle/debounce
+- [Postal](https://github.com/postaljs/postal.js) - pub/sub library to allow decoupled communication between components
+- [Modernizr](https://modernizr.com) - Browser feature detection (touch-events)
 
 ## Project Structure
 

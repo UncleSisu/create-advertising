@@ -8,6 +8,8 @@ You need a have a private server or virtual private server (AWS, Digital Ocean, 
 
 **You can't run trellis on a shared host** because you need to be able to connect to your server from your local computer via SSH.
 
+### Digital Ocean
+
 For Digital Ocean create a new droplet and choose Ubuntu 16.04 x64 for the distribution, $5/mo for the size, choose any datacenter region, and **include your SSH key**.
 
 Confirm that you can SSH into the server
@@ -92,7 +94,7 @@ At this point we will have a properly configured server with PHP, Nginx, Databas
 
 ## 4. Deploy files to remote server
 
-To deploy the site's files run the following command from inside the `trellis` directory. Where `<domain>` is the site url you added to the `wordpress_sites.yml` file in Step 2.2.
+To deploy the site's files run the following command from inside the `trellis` directory. Where `<domain>` is the site url you added to the `<environment>/wordpress_sites.yml` file in Step 2.2.
 
 ```
 ./bin/deploy.sh <environment> <domain>
